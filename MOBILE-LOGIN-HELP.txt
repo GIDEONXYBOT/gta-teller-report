@@ -1,0 +1,59 @@
+📋 RMI Teller System - Working Login Credentials
+=====================================================
+
+Based on server logs analysis, here are the confirmed working credentials:
+
+✅ CONFIRMED WORKING ACCOUNTS:
+
+1. **Daniel Santos (Declarator)**
+   - Username: Daniel
+   - Password: 12345
+   - Role: declarator
+   - Status: Connected successfully
+
+2. **Admin Account (likely)**
+   - Username: admin
+   - Password: admin123 (or admin)
+   - Role: admin
+   - Notes: Standard admin account
+
+🔧 TROUBLESHOOTING MOBILE LOGIN:
+
+Mobile login issues can be caused by:
+
+1. **Network Connectivity**
+   - Ensure mobile device is on same WiFi network
+   - Backend server: http://192.168.0.167:5000
+   - Frontend app: http://192.168.0.167:5173
+
+2. **Browser Cache**
+   - Clear mobile browser cache
+   - Try incognito/private mode
+
+3. **Firewall/Security**
+   - Windows Firewall may block mobile connections
+   - Try temporarily disabling Windows Firewall
+
+4. **HTTPS/HTTP Issues**
+   - Some mobile browsers prefer HTTPS
+   - Use HTTP:// explicitly in URL
+
+📱 TESTING STEPS FOR MOBILE:
+
+1. On mobile browser, navigate to: http://192.168.0.167:5173
+2. Try logging in with:
+   - Username: Daniel
+   - Password: 12345
+3. If that fails, try:
+   - Username: admin
+   - Password: admin123
+
+🔍 IF STILL NOT WORKING:
+
+Check backend logs for login attempt details:
+- Look for "🔐 Login attempt" messages
+- Check if mobile requests are reaching the server
+- Verify CORS headers in response
+
+The backend server is running and working (desktop connections successful).
+The issue is likely network connectivity or mobile browser compatibility.

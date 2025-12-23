@@ -1,0 +1,57 @@
+{
+  "name": "rmi-teller-report",
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "dev": "start start-dev.bat",
+    "prod": "npm run build && npm start",
+    "production": "npm run build && npm start",
+    "electron": "npm run build && electron .",
+    "dist": "npm run build && electron-builder --win --x64"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "bcryptjs": "^3.0.3",
+    "cheerio": "^1.1.2",
+    "dotenv": "^17.2.3",
+    "nodemailer": "^7.0.11"
+  },
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^24.2.0",
+    "electron-updater": "^6.6.2",
+    "sharp": "^0.34.5"
+  },
+  "build": {
+    "appId": "com.rmi.teller-report",
+    "productName": "GTA Teller Report",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**/*",
+      "frontend/dist/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "GIDEONXYBOT",
+      "repo": "Rmi-Gideon"
+    }
+  }
+}
+

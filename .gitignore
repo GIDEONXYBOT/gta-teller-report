@@ -1,0 +1,7 @@
+node_modulesrelease/*.exe
+release/*.blockmap
+release/win-unpacked/
+release/RMI Teller Report Setup*
+.DS_Store
+dist/
+node_modules

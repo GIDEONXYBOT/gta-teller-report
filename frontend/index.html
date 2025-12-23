@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>RMI Teller Report</title>
+  <!-- Disable HMR WebSocket for network access to prevent timeout errors -->
+  <script src="/disable-hmr.js"></script>
+  </head>
+  <body>
+    <script>
+      // Dynamic viewport height fix for mobile browsers and full-bleed rendering
+      (function() {
+        const setVh = () => {
+          const vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+        window.addEventListener('resize', setVh);
+        window.addEventListener('orientationchange', setVh);
+        setVh();
+        document.addEventListener('DOMContentLoaded', () => {
+          document.body.classList.add('fullscreen-fix');
+          const root = document.getElementById('root');
+          if (root) root.classList.add('fullscreen-fix');
+        });
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

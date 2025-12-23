@@ -1,0 +1,58 @@
+🔄 Connecting to MongoDB...
+🕐 Reset scheduled for 00:00 (cron: 0 0 * * *)
+🕐 Scheduler set for 00:00 Asia/Manila
+🚀 Backend Server Started
+📡 Local: http://localhost:5000
+📡 Network: http://192.168.0.167:5000
+✅ MongoDB connected successfully
+⏸️  Supervisor assignment auto-reset is DISABLED
+✅ Supervisor reset scheduler initialized
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /api/reports/kpi/tellers from 127.0.0.1
+📊 KPI endpoint called - returning mock data
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170
+📥 GET /socket.io/ from 192.168.0.170

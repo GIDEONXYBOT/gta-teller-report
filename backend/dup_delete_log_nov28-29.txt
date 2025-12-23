@@ -1,0 +1,220 @@
+﻿{
+    "id":  "69292d08d85e54665b3bf554",
+    "createdAt":  "2025-11-28T05:03:05.020Z",
+    "username":  "024.Marygold",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6927ebdc0fb12b256b80e0c5",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707ced1c883ba1ec5dd8",
+    "createdAt":  "2025-11-29T04:03:08.396Z",
+    "username":  "008.Dianne",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "69283694ace39b9975744ff2",
+    "status":  "deleted"
+}
+{
+    "id":  "69292b77bf9e209b10834115",
+    "createdAt":  "2025-11-28T04:56:23.758Z",
+    "username":  "Alfonso00",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6927ea690fb12b256b80e090",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707cbf9e209b10834b18",
+    "createdAt":  "2025-11-29T04:03:08.684Z",
+    "username":  "Alfonso00",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6927ea690fb12b256b80e090",
+    "status":  "deleted"
+}
+{
+    "id":  "69292b77d85e54665b3bf484",
+    "createdAt":  "2025-11-28T04:56:23.812Z",
+    "username":  "007.Shymaine",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6927f10f0fb12b256b80e371",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707ced1c883ba1ec5e03",
+    "createdAt":  "2025-11-29T04:03:08.802Z",
+    "username":  "007.Shymaine",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6927f10f0fb12b256b80e371",
+    "status":  "deleted"
+}
+{
+    "id":  "69292b77d85e54665b3bf480",
+    "createdAt":  "2025-11-28T04:56:23.806Z",
+    "username":  "026.Karyle",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "69283610ace39b9975744f9e",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707ced1c883ba1ec5ddc",
+    "createdAt":  "2025-11-29T04:03:08.400Z",
+    "username":  "026.Karyle",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "69283610ace39b9975744f9e",
+    "status":  "deleted"
+}
+{
+    "id":  "69292b77d85e54665b3bf46e",
+    "createdAt":  "2025-11-28T04:56:23.461Z",
+    "username":  "006.erika",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6927ed6c0fb12b256b80e191",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707ced1c883ba1ec5dd4",
+    "createdAt":  "2025-11-29T04:03:08.392Z",
+    "username":  "006.erika",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6927ed6c0fb12b256b80e191",
+    "status":  "deleted"
+}
+{
+    "id":  "69292d09d85e54665b3bf55a",
+    "createdAt":  "2025-11-28T05:03:05.147Z",
+    "username":  "010.michelle",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6928359aace39b9975744f94",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707ced1c883ba1ec5dd2",
+    "createdAt":  "2025-11-29T04:03:08.391Z",
+    "username":  "010.michelle",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6928359aace39b9975744f94",
+    "status":  "deleted"
+}
+{
+    "id":  "69292b77d85e54665b3bf482",
+    "createdAt":  "2025-11-28T04:56:23.807Z",
+    "username":  "032.juliet",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "692858d0530726292904655b",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707ced1c883ba1ec5de1",
+    "createdAt":  "2025-11-29T04:03:08.408Z",
+    "username":  "032.juliet",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "692858d0530726292904655b",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707ced1c883ba1ec5dd6",
+    "createdAt":  "2025-11-29T04:03:08.393Z",
+    "username":  "018.honey",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6927ec970fb12b256b80e10b",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707ced1c883ba1ec5e05",
+    "createdAt":  "2025-11-29T04:03:08.801Z",
+    "username":  "017.marie",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "69287a6ebb4eb69d4f8e948c",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707ced1c883ba1ec5dda",
+    "createdAt":  "2025-11-29T04:03:08.400Z",
+    "username":  "011.Sheena",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6927ef090fb12b256b80e261",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707ced1c883ba1ec5dde",
+    "createdAt":  "2025-11-29T04:03:08.401Z",
+    "username":  "005.tine",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "6927fb870fb12b256b80e63f",
+    "status":  "deleted"
+}
+{
+    "id":  "692aa6df6eca7575854d2d7a",
+    "createdAt":  "2025-11-29T07:55:11.762Z",
+    "username":  "031.charm",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "692891f373618b1c9cf57d84",
+    "status":  "deleted"
+}
+{
+    "id":  "692a707ced1c883ba1ec5e08",
+    "createdAt":  "2025-11-29T04:03:08.801Z",
+    "username":  "023.Jenessa",
+    "response":  {
+                     "success":  true,
+                     "message":  "Payroll deleted successfully"
+                 },
+    "userId":  "69287ae4bb4eb69d4f8e94a4",
+    "status":  "deleted"
+}

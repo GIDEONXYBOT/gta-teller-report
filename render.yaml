@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: rmi-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    rootDir: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+    healthCheckPath: /api/health
+    plan: free

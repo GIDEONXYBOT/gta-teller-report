@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connection Test</title>
+</head>
+<body>
+    <h1>Frontend to Backend Connection Test</h1>
+    <button onclick="testConnection()">Test Backend Connection</button>
+    <div id="result"></div>
+
+    <script>
+        async function testConnection() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>Testing connection...</p>';
+            
+            try {
+                // Test different backend URLs
+                const urls = [
+                    'http://localhost:5000/api/settings',
+                    'http://192.168.0.167:5000/api/settings'
+                ];
+                
+                for (const url of urls) {
+                    try {
+                        resultDiv.innerHTML += `<p>Testing: ${url}</p>`;
+                        const response = await fetch(url);
+                        const data = await response.text();
+                        resultDiv.innerHTML += `<p>✅ ${url}: ${response.status} - ${data.substring(0, 100)}</p>`;
+                    } catch (err) {
+                        resultDiv.innerHTML += `<p>❌ ${url}: ${err.message}</p>`;
+                    }
+                }
+            } catch (err) {
+                resultDiv.innerHTML += `<p>❌ Error: ${err.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

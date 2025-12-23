@@ -1,0 +1,20 @@
+## Example cloudflared configuration for exposing backend port 5000 as api.gideonbot.xyz
+#
+# Replace <TUNNEL_ID> and adjust credentials-file path after running `cloudflared tunnel create <name>`
+# Save this file as /etc/cloudflared/config.yml on the machine where the backend runs
+
+tunnel: <TUNNEL_ID>
+credentials-file: /root/.cloudflared/<TUNNEL_ID>.json
+
+ingress:
+  - hostname: api.gideonbot.xyz
+    service: http://localhost:5000
+
+  # Optional: route static assets (if you host them separately) or other services
+  # - hostname: static.gideonbot.xyz
+  #   service: http://localhost:8080
+
+  - service: http_status:404
+
+# Optional: metrics port
+# metrics: 9610

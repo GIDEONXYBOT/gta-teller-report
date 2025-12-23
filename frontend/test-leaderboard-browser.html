@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard Integration Test</title>
+</head>
+<body>
+    <h1>Leaderboard Integration Test</h1>
+    <div id="output"></div>
+
+    <script type="module">
+        // Test the leaderboard service
+        async function testLeaderboardIntegration() {
+            const output = document.getElementById('output');
+
+            try {
+                output.innerHTML = '<p>🧪 Testing Leaderboard Integration...</p>';
+
+                // Import the service
+                const { leaderboardService } = await import('./src/services/leaderboardService.js');
+
+                // Test fetching data
+                output.innerHTML += '<p>📡 Fetching leaderboard data...</p>';
+                const draws = await leaderboardService.fetchLeaderboardData();
+
+                output.innerHTML += `<p>✅ Successfully fetched ${draws.length} draws</p>`;
+
+                // Test getting stats
+                output.innerHTML += '<p>📊 Calculating statistics...</p>';
+                const stats = await leaderboardService.getBettingStats();
+
+                output.innerHTML += `<p>✅ Stats calculated: ${stats.totalDraws} draws, ${stats.totalBets} bets, ₱${stats.totalBetAmount.toLocaleString()} total</p>`;
+
+                // Test getting current draw
+                output.innerHTML += '<p>🎯 Getting current draw...</p>';
+                const currentDraw = await leaderboardService.getCurrentDraw();
+
+                if (currentDraw) {
+                    output.innerHTML += `<p>✅ Current draw: ${currentDraw.drawNumber} (${currentDraw.status})</p>`;
+                } else {
+                    output.innerHTML += '<p>ℹ️ No active draw currently</p>';
+                }
+
+                // Show sample data
+                output.innerHTML += '<h2>Sample Draw Data:</h2>';
+                output.innerHTML += `<pre>${JSON.stringify(draws[0], null, 2)}</pre>`;
+
+                output.innerHTML += '<p style="color: green; font-weight: bold;">🎉 Leaderboard integration test completed successfully!</p>';
+
+            } catch (error) {
+                output.innerHTML += `<p style="color: red;">❌ Test failed: ${error.message}</p>`;
+                console.error('Test error:', error);
+            }
+        }
+
+        // Run the test when page loads
+        window.addEventListener('load', testLeaderboardIntegration);
+    </script>
+</body>
+</html>

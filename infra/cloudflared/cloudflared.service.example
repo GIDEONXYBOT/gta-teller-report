@@ -1,0 +1,17 @@
+# Example systemd unit for cloudflared (save as /etc/systemd/system/cloudflared.service)
+# Replace <USER> and <TUNNEL_NAME> and credentials-file path accordingly.
+
+[Unit]
+Description=Cloudflare Tunnel
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Environment="TUNNEL_TOKEN="
+ExecStart=/usr/local/bin/cloudflared tunnel run --config /etc/cloudflared/config.yml
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

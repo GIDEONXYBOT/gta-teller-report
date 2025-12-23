@@ -1,0 +1,21 @@
+directories:
+  output: release
+  buildResources: build
+appId: com.rmi.teller-report
+productName: RMI Teller Report
+files:
+  - filter:
+      - electron/**/*
+      - frontend/dist/**/*
+      - package.json
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: build/icon.png
+publish:
+  provider: github
+  owner: GIDEONXYBOT
+  repo: Rmi-Gideon
+electronVersion: 26.6.10

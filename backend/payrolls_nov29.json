@@ -1,0 +1,65 @@
+﻿[
+    {
+        "user":  "030.keanna",
+        "baseSalary":  0,
+        "over":  675,
+        "totalSalary":  675,
+        "createdAt":  "2025-11-29T04:03:08.554Z"
+    },
+    {
+        "user":  "029.jovelyn",
+        "baseSalary":  450,
+        "over":  412,
+        "totalSalary":  862,
+        "createdAt":  "2025-11-29T04:03:08.868Z"
+    },
+    {
+        "user":  "002.mary",
+        "baseSalary":  450,
+        "over":  133,
+        "totalSalary":  583,
+        "createdAt":  "2025-11-29T04:03:08.943Z"
+    },
+    {
+        "user":  "019.jesyrie",
+        "baseSalary":  450,
+        "over":  908,
+        "totalSalary":  1358,
+        "createdAt":  "2025-11-29T04:03:08.948Z"
+    },
+    {
+        "user":  "015.Mitch",
+        "baseSalary":  0,
+        "over":  0,
+        "totalSalary":  0,
+        "createdAt":  "2025-11-29T04:37:57.412Z"
+    },
+    {
+        "user":  "014.kissy",
+        "baseSalary":  0,
+        "over":  0,
+        "totalSalary":  0,
+        "createdAt":  "2025-11-29T04:37:59.832Z"
+    },
+    {
+        "user":  "027.Marilou",
+        "baseSalary":  0,
+        "over":  0,
+        "totalSalary":  0,
+        "createdAt":  "2025-11-29T04:38:09.078Z"
+    },
+    {
+        "user":  "013.Marebelen",
+        "baseSalary":  0,
+        "over":  0,
+        "totalSalary":  0,
+        "createdAt":  "2025-11-29T04:38:11.525Z"
+    },
+    {
+        "user":  "Ramesh",
+        "baseSalary":  0,
+        "over":  0,
+        "totalSalary":  0,
+        "createdAt":  "2025-11-29T12:11:57.783Z"
+    }
+]

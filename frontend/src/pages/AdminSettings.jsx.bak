@@ -1,0 +1,1273 @@
+import React, { useContext, useState, useEffect } from "react";
+import { SettingsContext } from "../context/SettingsContext.jsx";
+import axios from "axios";
+import { Trash2, RefreshCw, Key, AlertTriangle, Edit3, DollarSign, History } from "lucide-react";
+import { API_URL } from "../utils/apiConfig.js";
+
+const API = API_URL;
+
+export default function AdminSettings() {
+  const { settings, updateSettings, loading, user, userTheme, updateUserTheme, setUser } = useContext(SettingsContext);
+  const [saving, setSaving] = useState(false);
+
+  // Check if user is admin
+  const isAdmin = user?.role === 'admin' || user?.role === 'super_admin';
+
+  // Local theme state (for both system and user themes)
+  const [localTheme, setLocalTheme] = useState(null);
+
+  // Initialize local theme from user theme or system theme
+  useEffect(() => {
+    if (userTheme) {
+      setLocalTheme(userTheme);
+    } else if (user?.theme) {
+      setLocalTheme(user.theme);
+    } else if (settings?.theme) {
+      setLocalTheme(settings.theme);
+    }
+  }, [userTheme, user, settings]);
+
+  // new: reset time state
+  const [resetTime, setResetTime] = useState("04:00");
+  const [resetSaving, setResetSaving] = useState(false);
+
+  // Supervisor reset states
+  const [supervisorResetTime, setSupervisorResetTime] = useState("02:00");
+  const [autoResetSupervisorAssignments, setAutoResetSupervisorAssignments] = useState(false);
+  const [supervisorResetSaving, setSupervisorResetSaving] = useState(false);
+  const [manualResetting, setManualResetting] = useState(false);
+
+  // Multiple reports per day setting
+  const [allowMultipleReportsPerDay, setAllowMultipleReportsPerDay] = useState(false);
+  const [multipleReportsSaving, setMultipleReportsSaving] = useState(false);
+
+  // 🔁 Backfill payroll recalc (super_admin only)
+  const isSuperAdmin = user?.role === 'super_admin';
+  const [backfillStartDate, setBackfillStartDate] = useState("");
+  const [backfillEndDate, setBackfillEndDate] = useState("");
+  const [backfillRunning, setBackfillRunning] = useState(false);
+  const [backfillResult, setBackfillResult] = useState(null);
+  const [backfillLogs, setBackfillLogs] = useState([]);
+
+
+  // Transaction reset states
+  const [tellers, setTellers] = useState([]);
+  const [selectedTeller, setSelectedTeller] = useState("");
+  const [resetting, setResetting] = useState(false);
+
+  // Change password states
+  const [users, setUsers] = useState([]);
+  const [selectedUser, setSelectedUser] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [changingPassword, setChangingPassword] = useState(false);
+  
+  // Own password change (for non-admin users)
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [ownNewPassword, setOwnNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  // User profile editing states (for all users)
+  const [editingProfile, setEditingProfile] = useState(false);
+  const [profileName, setProfileName] = useState(user?.name || "");
+  const [profileUsername, setProfileUsername] = useState(user?.username || "");
+  const [savingProfile, setSavingProfile] = useState(false);
+
+  // Teller report override states
+  const [tellersForReport, setTellersForReport] = useState([]);
+  const [supervisorsForReport, setSupervisorsForReport] = useState([]);
+  const [selectedTellerReport, setSelectedTellerReport] = useState("");
+  const [selectedSupervisorReport, setSelectedSupervisorReport] = useState("");
+  const [reportOverride, setReportOverride] = useState({
+    systemBalance: "",
+    cashOnHand: "",
+    short: "",
+    over: ""
+  });
+  const [overrideDate, setOverrideDate] = useState(new Date().toISOString().split('T')[0]);
+  const [overriding, setOverriding] = useState(false);
+
+  // Payroll sync state
+  const [syncingPayroll, setSyncingPayroll] = useState(false);
+
+  useEffect(() => {
+    // load current reset time from backend
+    let mounted = true;
+    (async () => {
+      try {
+        const res = await axios.get(`${API}/api/scheduler`);
+        if (mounted && res.data?.resetTime) {
+          const valid = /^\d{1,2}:\d{2}/.test(res.data.resetTime)
+            ? res.data.resetTime.slice(0, 5)
+            : "04:00";
+          setResetTime(valid);
+        }
+      } catch (err) {
+        console.warn("⚠️ Failed to load scheduler time:", err);
+      }
+    })();
+
+    // Load supervisor reset settings
+    (async () => {
+      try {
+        const res = await axios.get(`${API}/api/system-settings`);
+        if (mounted && res.data) {
+          setSupervisorResetTime(res.data.supervisorResetTime || "02:00");
+          setAutoResetSupervisorAssignments(res.data.autoResetSupervisorAssignments || false);
+          setAllowMultipleReportsPerDay(res.data.allowMultipleReportsPerDay || false);
+        }
+      } catch (err) {
+        console.warn("⚠️ Failed to load supervisor reset settings:", err);
+      }
+    })();
+
+    // Load tellers for transaction reset (admin only)
+    if (isAdmin) {
+      (async () => {
+        try {
+          const res = await axios.get(`${API}/api/admin/users`);
+          const tellerList = (res.data || []).filter(u => u.role === 'teller');
+          if (mounted) setTellers(tellerList);
+        } catch (err) {
+          console.warn("⚠️ Failed to load tellers:", err);
+        }
+      })();
+
+      // Load all users for password change (admin only)
+      (async () => {
+        try {
+          const res = await axios.get(`${API}/api/admin/users`);
+          if (mounted) setUsers(res.data || []);
+        } catch (err) {
+          console.warn("⚠️ Failed to load users:", err);
+        }
+      })();
+
+      // Load tellers for report override (admin only)
+      (async () => {
+        try {
+          const res = await axios.get(`${API}/api/admin/users`);
+          const tellerList = (res.data || []).filter(u => u.role === 'teller');
+          if (mounted) setTellersForReport(tellerList);
+        } catch (err) {
+          console.warn("⚠️ Failed to load tellers for report:", err);
+        }
+      })();
+
+      // Load supervisors for report override (admin only)
+      (async () => {
+        try {
+          const res = await axios.get(`${API}/api/admin/users`);
+          const supervisorList = (res.data || []).filter(u => u.role === 'supervisor');
+          if (mounted) setSupervisorsForReport(supervisorList);
+        } catch (err) {
+          console.warn("⚠️ Failed to load supervisors for report:", err);
+        }
+      })();
+    }
+
+    return () => (mounted = false);
+  }, []);
+
+  if (loading || !settings)
+    return (
+      <div className="p-6 text-gray-700 dark:text-gray-200">
+        ⏳ Loading system settings...
+      </div>
+    );
+
+  const handleBaseSalaryChange = (role, value) => {
+    updateSettings({
+      ...settings,
+      baseSalary: { ...settings.baseSalary, [role]: parseInt(value) || 0 },
+    });
+  };
+
+  const handleThemeChange = (field, value) => {
+    const newTheme = { ...localTheme, [field]: value };
+    setLocalTheme(newTheme);
+    
+    if (isAdmin) {
+      // Admin updates system theme
+      updateSettings({
+        ...settings,
+        theme: newTheme,
+      });
+    } else {
+      // Non-admin updates their own theme
+      updateUserTheme(newTheme);
+    }
+  };
+
+  const handleModeChange = (mode) => {
+    const newTheme = { ...localTheme, mode };
+    setLocalTheme(newTheme);
+    
+    if (isAdmin) {
+      // Admin updates system theme
+      updateSettings({
+        ...settings,
+        theme: newTheme,
+      });
+    } else {
+      // Non-admin updates their own theme
+      updateUserTheme(newTheme);
+    }
+  };
+
+  const saveAll = async () => {
+    setSaving(true);
+    try {
+      await updateSettings(settings);
+      alert("✅ Settings saved successfully!");
+    } catch (err) {
+      console.error("❌ Failed to save:", err);
+      alert("Failed to save settings.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  // ✅ Improved reset time save with validation
+  const saveResetTime = async () => {
+    setResetSaving(true);
+    try {
+      let formatted = resetTime;
+
+      if (!formatted || formatted.includes("Invalid")) {
+        alert("⚠️ Please select a valid reset time first.");
+        setResetSaving(false);
+        return;
+      }
+
+      await axios.put(`${API}/api/scheduler`, { resetTime: formatted });
+      alert(`✅ Reset time updated to ${formatted}`);
+    } catch (err) {
+      console.error("❌ Failed to update reset time:", err);
+      alert("Failed to update reset time.");
+    } finally {
+      setResetSaving(false);
+    }
+  };
+
+  // Save supervisor reset settings
+  const saveSupervisorResetSettings = async () => {
+    setSupervisorResetSaving(true);
+    try {
+      await axios.put(`${API}/api/system-settings/supervisor-reset`, {
+        supervisorResetTime,
+        autoResetSupervisorAssignments
+      });
+      alert(`✅ Supervisor reset settings updated! ${autoResetSupervisorAssignments ? `Assignments will reset daily at ${supervisorResetTime}` : 'Auto-reset disabled'}`);
+    } catch (err) {
+      console.error("❌ Failed to update supervisor reset settings:", err);
+      alert("Failed to update supervisor reset settings.");
+    } finally {
+      setSupervisorResetSaving(false);
+    }
+  };
+
+  // Save user profile (name and username)
+  const saveProfile = async () => {
+    if (!profileName.trim() || !profileUsername.trim()) {
+      alert("⚠️ Name and username are required.");
+      return;
+    }
+
+    setSavingProfile(true);
+    try {
+      const token = localStorage.getItem("token");
+      await axios.put(
+        `${API}/api/users/profile`,
+        {
+          name: profileName.trim(),
+          username: profileUsername.trim()
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` }
+        }
+      );
+
+      // Update local user state in context
+      setUser(updatedUser);
+
+      alert("✅ Profile updated successfully!");
+      setEditingProfile(false);
+    } catch (err) {
+      console.error("❌ Failed to update profile:", err);
+      alert("Failed to update profile: " + (err.response?.data?.message || err.message));
+    } finally {
+      setSavingProfile(false);
+    }
+  };
+
+  // Save multiple reports per day setting
+  const saveMultipleReportsSetting = async () => {
+    setMultipleReportsSaving(true);
+    try {
+      await axios.put(`${API}/api/system-settings/multiple-reports`, {
+        allowMultipleReportsPerDay
+      });
+      alert(`✅ Multiple reports setting updated! ${allowMultipleReportsPerDay ? 'Tellers can now submit multiple reports per day' : 'Tellers are limited to one report per day'}`);
+    } catch (err) {
+      console.error("❌ Failed to update multiple reports setting:", err);
+      alert("Failed to update multiple reports setting.");
+    } finally {
+      setMultipleReportsSaving(false);
+    }
+  };
+
+  // Manually trigger supervisor assignment reset
+  const manualResetSupervisorAssignments = async () => {
+    if (!confirm("⚠️ This will clear all teller-supervisor assignments. Continue?")) {
+      return;
+    }
+    
+    setManualResetting(true);
+    try {
+      await axios.post(`${API}/api/system-settings/supervisor-reset/trigger`);
+      alert("✅ All supervisor assignments have been cleared!");
+    } catch (err) {
+      console.error("❌ Failed to reset assignments:", err);
+      alert("Failed to reset supervisor assignments.");
+    } finally {
+      setManualResetting(false);
+    }
+  };
+
+  // Reset teller transactions
+  const resetTellerTransactions = async () => {
+    if (!selectedTeller) {
+      alert("Please select a teller first");
+      return;
+    }
+
+    const teller = tellers.find(t => t._id === selectedTeller);
+    if (!confirm(`⚠️ Are you sure you want to reset all transactions for ${teller?.name || teller?.username}? This will delete all capital and transaction records for this teller.`)) {
+      return;
+    }
+
+    setResetting(true);
+    try {
+      // Delete all capital records for this teller
+      await axios.delete(`${API}/api/teller-management/${selectedTeller}/reset-all`);
+      alert(`✅ Successfully reset all transactions for ${teller?.name || teller?.username}`);
+      setSelectedTeller("");
+    } catch (err) {
+      console.error("❌ Failed to reset transactions:", err);
+      alert("Failed to reset transactions: " + (err.response?.data?.error || err.message));
+    } finally {
+      setResetting(false);
+    }
+  };
+
+  // Change user password
+  const changeUserPassword = async () => {
+    if (!selectedUser) {
+      alert("Please select a user first");
+      return;
+    }
+
+    if (!newPassword || newPassword.length < 4) {
+      alert("Password must be at least 4 characters long");
+      return;
+    }
+
+    const user = users.find(u => u._id === selectedUser);
+    if (!confirm(`Change password for ${user?.name || user?.username}?`)) {
+      return;
+    }
+
+    setChangingPassword(true);
+    try {
+      await axios.put(`${API}/api/admin/users/${selectedUser}/password`, {
+        password: newPassword
+      });
+      alert(`✅ Password changed successfully for ${user?.name || user?.username}`);
+      setSelectedUser("");
+      setNewPassword("");
+    } catch (err) {
+      console.error("❌ Failed to change password:", err);
+      alert("Failed to change password: " + (err.response?.data?.error || err.message));
+    } finally {
+      setChangingPassword(false);
+    }
+  };
+
+  // Change own password (for non-admin users)
+  const changeOwnPassword = async () => {
+    if (!currentPassword || !ownNewPassword || !confirmPassword) {
+      alert("Please fill in all password fields");
+      return;
+    }
+
+    if (ownNewPassword.length < 4) {
+      alert("New password must be at least 4 characters long");
+      return;
+    }
+
+    if (ownNewPassword !== confirmPassword) {
+      alert("New passwords do not match");
+      return;
+    }
+
+    if (!confirm("Change your password?")) {
+      return;
+    }
+
+    setChangingPassword(true);
+    try {
+      const token = localStorage.getItem("token");
+      await axios.put(
+        `${API}/api/admin/users/${user._id}/password`,
+        { password: ownNewPassword, currentPassword },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      alert("✅ Password changed successfully");
+      setCurrentPassword("");
+      setOwnNewPassword("");
+      setConfirmPassword("");
+    } catch (err) {
+      console.error("❌ Failed to change password:", err);
+      alert("Failed to change password: " + (err.response?.data?.error || err.message));
+    } finally {
+      setChangingPassword(false);
+    }
+  };
+
+  // Override or backfill teller report for any date
+  const overrideTellerReport = async () => {
+    if (!selectedTellerReport) {
+      alert("Please select a teller first");
+      return;
+    }
+
+    if (!selectedSupervisorReport) {
+      alert("Please select a supervisor first");
+      return;
+    }
+
+    if (!overrideDate) {
+      alert("Please select a date for the report");
+      return;
+    }
+
+    const teller = tellersForReport.find(t => t._id === selectedTellerReport);
+    const supervisor = supervisorsForReport.find(s => s._id === selectedSupervisorReport);
+    
+    if (!confirm(`Override/backfill ${overrideDate} report for ${teller?.name || teller?.username} under ${supervisor?.name || supervisor?.username}?`)) {
+      return;
+    }
+
+    setOverriding(true);
+    try {
+      const token = localStorage.getItem("token");
+      
+      await axios.put(
+        `${API}/api/teller-reports/${selectedTellerReport}/override`,
+        {
+          date: overrideDate,
+          supervisorId: selectedSupervisorReport,
+          supervisorName: supervisor?.name || supervisor?.username,
+          systemBalance: parseFloat(reportOverride.systemBalance) || 0,
+          cashOnHand: parseFloat(reportOverride.cashOnHand) || 0,
+          short: parseFloat(reportOverride.short) || 0,
+          over: parseFloat(reportOverride.over) || 0
+        },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      
+      alert(`✅ Report saved for ${overrideDate} – ${teller?.name || teller?.username}`);
+      setSelectedTellerReport("");
+      setSelectedSupervisorReport("");
+      setReportOverride({
+        systemBalance: "",
+        cashOnHand: "",
+        short: "",
+        over: ""
+      });
+      setOverrideDate(new Date().toISOString().split('T')[0]);
+    } catch (err) {
+      console.error("❌ Failed to override report:", err);
+      alert("Failed to override report: " + (err.response?.data?.error || err.message));
+    } finally {
+      setOverriding(false);
+    }
+  };
+
+  // Sync all teller payrolls from reports
+  const syncAllTellerPayrolls = async () => {
+    if (!confirm("This will recalculate all teller payrolls based on their reports. Continue?")) {
+      return;
+    }
+
+    setSyncingPayroll(true);
+    try {
+      const token = localStorage.getItem("token");
+      
+      // Get all tellers
+      const tellerRes = await axios.get(`${API}/api/admin/users`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      
+      const tellers = (tellerRes.data || []).filter(u => u.role === 'teller');
+      
+      let successCount = 0;
+      let failCount = 0;
+
+      // Sync each teller's payroll
+      for (const teller of tellers) {
+        try {
+          await axios.post(
+            `${API}/api/payroll/sync-teller-reports`,
+            { userId: teller._id },
+            { headers: { Authorization: `Bearer ${token}` } }
+          );
+          successCount++;
+        } catch (err) {
+          console.error(`Failed to sync payroll for ${teller.name || teller.username}:`, err);
+          failCount++;
+        }
+      }
+
+      alert(`✅ Payroll sync complete!\nSuccess: ${successCount}\nFailed: ${failCount}`);
+    } catch (err) {
+      console.error("❌ Failed to sync payrolls:", err);
+      alert("Failed to sync payrolls: " + (err.response?.data?.message || err.message));
+    } finally {
+      setSyncingPayroll(false);
+    }
+  };
+
+  // Run server-side backfill/recalculate payroll totals for a date range (super_admin only)
+  const runBackfillRecalculate = async () => {
+    if (!isSuperAdmin) return alert('Permission denied - super_admin only');
+    if (!backfillStartDate || !backfillEndDate) return alert('Please select both start and end dates');
+
+    if (!confirm(`Run payroll recalculation between ${backfillStartDate} → ${backfillEndDate}? This will update payroll totals in place.`)) return;
+
+    setBackfillRunning(true);
+    setBackfillResult(null);
+    setBackfillLogs([]);
+
+    try {
+      const token = localStorage.getItem('token');
+      setBackfillLogs((logs) => [...logs, `Starting backfill (${backfillStartDate} → ${backfillEndDate})...`]);
+      const res = await axios.post(`${API}/api/payroll/backfill-recalculate`, {
+        startDate: backfillStartDate,
+        endDate: backfillEndDate,
+      }, { headers: { Authorization: `Bearer ${token}` } });
+
+      setBackfillResult(res.data);
+      setBackfillLogs((logs) => [...logs, `✅ Done: ${JSON.stringify(res.data)}`]);
+      alert(`Backfill completed: ${res.data.processed || 0} processed`);
+    } catch (err) {
+      console.error('❌ Backfill error:', err);
+      const msg = err?.response?.data?.message || err.message || 'Unknown error';
+      setBackfillLogs((logs) => [...logs, `❌ Error: ${msg}`]);
+      alert('Backfill failed: ' + msg);
+    } finally {
+      setBackfillRunning(false);
+    }
+  };
+
+  return (
+    <div className="p-6 bg-gray-100 dark:bg-blue-950 text-gray-900 dark:text-gray-100 min-h-screen">
+      <h1 className="text-2xl font-bold mb-6">⚙️ {isAdmin ? 'System Settings' : 'My Settings'}</h1>
+
+      {/* 💰 Base Salary Configuration - ADMIN ONLY */}
+      {isAdmin && (
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+          <h2 className="font-semibold text-lg mb-3">
+            💰 Base Salary Configuration
+          </h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          {Object.keys(settings.baseSalary).map((role) => (
+            <div key={role}>
+              <label className="block capitalize mb-1">{role}</label>
+              <input
+                type="number"
+                value={settings.baseSalary[role]}
+                onChange={(e) => handleBaseSalaryChange(role, e.target.value)}
+                className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+          ))}
+        </div>
+        </div>
+      )}
+
+      {/* 👤 User Profile Settings - FOR ALL USERS */}
+      <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+        <h2 className="font-semibold text-lg mb-3">👤 My Profile</h2>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+          Update your personal information
+        </p>
+
+        {!editingProfile ? (
+          <div className="space-y-3">
+            <div>
+              <label className="block text-sm font-medium mb-1">Name</label>
+              <div className="p-2 bg-gray-50 dark:bg-gray-700 rounded border">
+                {user?.name || "Not set"}
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1">Username</label>
+              <div className="p-2 bg-gray-50 dark:bg-gray-700 rounded border">
+                {user?.username}
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1">Role</label>
+              <div className="p-2 bg-gray-50 dark:bg-gray-700 rounded border capitalize">
+                {user?.role}
+              </div>
+            </div>
+            <button
+              onClick={() => {
+                setEditingProfile(true);
+                setProfileName(user?.name || "");
+                setProfileUsername(user?.username || "");
+              }}
+              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+            >
+              ✏️ Edit Profile
+            </button>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            <div>
+              <label className="block text-sm font-medium mb-1">Name *</label>
+              <input
+                type="text"
+                value={profileName}
+                onChange={(e) => setProfileName(e.target.value)}
+                className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1">Username *</label>
+              <input
+                type="text"
+                value={profileUsername}
+                onChange={(e) => setProfileUsername(e.target.value)}
+                className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+                placeholder="Enter your username"
+                required
+              />
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={saveProfile}
+                disabled={savingProfile}
+                className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition disabled:opacity-50"
+              >
+                {savingProfile ? "💾 Saving..." : "💾 Save Changes"}
+              </button>
+              <button
+                onClick={() => setEditingProfile(false)}
+                className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition"
+              >
+                ❌ Cancel
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* 🎨 Theme Settings */}
+      {localTheme && (
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+          <h2 className="font-semibold text-lg mb-3">
+            🎨 {isAdmin ? 'System Theme Settings' : 'My Theme Settings'}
+          </h2>
+          {!isAdmin && (
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+              Customize your personal theme preferences
+            </p>
+          )}
+
+          <div className="flex items-center gap-3 mb-4">
+            <label className="font-medium">Mode:</label>
+            <select
+              value={localTheme.mode}
+              onChange={(e) => handleModeChange(e.target.value)}
+              className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+            >
+              <option value="light">🌞 Light</option>
+              <option value="dark">🌙 Dark</option>
+            </select>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <ColorInput
+              label="Light Font Color"
+              value={localTheme.lightFont}
+              onChange={(val) => handleThemeChange("lightFont", val)}
+            />
+            <ColorInput
+              label="Dark Font Color"
+              value={localTheme.darkFont}
+              onChange={(val) => handleThemeChange("darkFont", val)}
+            />
+            <ColorInput
+              label="Light Background"
+              value={localTheme.lightBg}
+              onChange={(val) => handleThemeChange("lightBg", val)}
+            />
+            <ColorInput
+              label="Dark Background"
+              value={localTheme.darkBg}
+              onChange={(val) => handleThemeChange("darkBg", val)}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* 🕐 Daily Reset Time Control - ADMIN ONLY */}
+      {isAdmin && (
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+          <h2 className="font-semibold text-lg mb-3">🕐 Daily Reset Time</h2>
+          <p className="text-sm text-gray-500 mb-3">
+            Choose what time the system performs automatic daily reset
+            (Asia/Manila timezone).
+          </p>
+          <div className="flex items-center gap-3">
+            <input
+              type="time"
+              value={resetTime}
+              onChange={(e) => setResetTime(e.target.value)}
+              className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+            />
+            <button
+              onClick={saveResetTime}
+              disabled={resetSaving}
+              className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:opacity-90"
+            >
+              {resetSaving ? "Saving..." : "Save Reset Time"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* 🔄 Supervisor Assignment Auto-Reset - ADMIN ONLY */}
+      {isAdmin && (
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+          <h2 className="font-semibold text-lg mb-3">🔄 Supervisor Assignment Auto-Reset</h2>
+          <p className="text-sm text-gray-500 mb-4">
+            Automatically clear all teller-supervisor assignments daily at a specified time. 
+            This allows supervisors to be reassigned flexibly each day.
+          </p>
+
+          <div className="space-y-4">
+            {/* Enable/Disable Toggle */}
+            <div className="flex items-center gap-3">
+              <input
+                type="checkbox"
+                id="autoResetSupervisorAssignments"
+                checked={autoResetSupervisorAssignments}
+                onChange={(e) => setAutoResetSupervisorAssignments(e.target.checked)}
+                className="w-5 h-5 text-indigo-600 rounded focus:ring-indigo-500"
+              />
+              <label htmlFor="autoResetSupervisorAssignments" className="text-sm font-medium">
+                Enable automatic daily reset
+              </label>
+            </div>
+
+            {/* Time Picker */}
+            <div className="flex items-center gap-3">
+              <label className="text-sm font-medium">Reset Time:</label>
+              <input
+                type="time"
+                value={supervisorResetTime}
+                onChange={(e) => setSupervisorResetTime(e.target.value)}
+                disabled={!autoResetSupervisorAssignments}
+                className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+              />
+              <button
+                onClick={saveSupervisorResetSettings}
+                disabled={supervisorResetSaving}
+                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:opacity-90 disabled:opacity-50"
+              >
+                {supervisorResetSaving ? "Saving..." : "Save Settings"}
+              </button>
+            </div>
+
+            {/* Manual Reset Button */}
+            <div className="pt-3 border-t dark:border-gray-700">
+              <button
+                onClick={manualResetSupervisorAssignments}
+                disabled={manualResetting}
+                className="px-4 py-2 bg-amber-600 text-white rounded-lg hover:opacity-90 disabled:opacity-50 flex items-center gap-2"
+              >
+                <RefreshCw className={`w-4 h-4 ${manualResetting ? 'animate-spin' : ''}`} />
+                {manualResetting ? "Resetting..." : "Reset All Assignments Now"}
+              </button>
+              <p className="text-xs text-gray-500 mt-2">
+                Manually clear all teller-supervisor assignments immediately
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 📊 Multiple Reports Per Day Setting - ADMIN ONLY */}
+      {isAdmin && (
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+          <h2 className="font-semibold text-lg mb-3">📊 Teller Report Frequency</h2>
+          <p className="text-sm text-gray-500 mb-4">
+            Control whether tellers can submit multiple reports per day or are limited to one report per day.
+          </p>
+
+          <div className="space-y-4">
+            {/* Enable/Disable Toggle */}
+            <div className="flex items-center gap-3">
+              <input
+                type="checkbox"
+                id="allowMultipleReportsPerDay"
+                checked={allowMultipleReportsPerDay}
+                onChange={(e) => setAllowMultipleReportsPerDay(e.target.checked)}
+                className="w-5 h-5 text-indigo-600 rounded focus:ring-indigo-500"
+              />
+              <label htmlFor="allowMultipleReportsPerDay" className="text-sm font-medium">
+                Allow tellers to submit multiple reports per day
+              </label>
+            </div>
+
+            {/* Save Button */}
+            <div className="flex items-center gap-3">
+              <button
+                onClick={saveMultipleReportsSetting}
+                disabled={multipleReportsSaving}
+                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:opacity-90 disabled:opacity-50"
+              >
+                {multipleReportsSaving ? "Saving..." : "Save Setting"}
+              </button>
+              <span className="text-sm text-gray-500">
+                Current: {allowMultipleReportsPerDay ? "Multiple reports allowed" : "One report per day"}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 🔄 Transaction Reset/Override - ADMIN ONLY */}
+      {isAdmin && (
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+          <h2 className="font-semibold text-lg mb-3 flex items-center gap-2">
+            <RefreshCw className="w-5 h-5" />
+            Transaction Reset/Override
+          </h2>
+          <div className="flex items-center gap-2 p-3 mb-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-lg">
+            <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0" />
+            <p className="text-sm text-amber-800 dark:text-amber-200">
+              Warning: This will permanently delete all capital and transaction records for the selected teller.
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            <select
+              value={selectedTeller}
+              onChange={(e) => setSelectedTeller(e.target.value)}
+              className="flex-1 p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+            >
+              <option value="">-- Select Teller to Reset --</option>
+              {tellers.map((t) => (
+                <option key={t._id} value={t._id}>
+                  {t.name || t.username}
+                </option>
+              ))}
+            </select>
+            <button
+              onClick={resetTellerTransactions}
+              disabled={!selectedTeller || resetting}
+              className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Trash2 className="w-4 h-4" />
+              {resetting ? "Resetting..." : "Reset Transactions"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* � Override/Backfill Teller Report - ADMIN ONLY */}
+      {isAdmin && (
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+          <h2 className="font-semibold text-lg mb-3 flex items-center gap-2">
+            <Edit3 className="w-5 h-5" />
+            Override/Backfill Teller Report
+          </h2>
+          <div className="flex items-center gap-2 p-3 mb-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg">
+            <AlertTriangle className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+            <p className="text-sm text-blue-800 dark:text-blue-200">
+              Manually set or override teller report values for any date. This will create or update the report for the selected day.
+            </p>
+          </div>
+          
+          <div className="space-y-3">
+            <div className="grid md:grid-cols-3 gap-3">
+              <div>
+                <label className="block mb-1 text-sm font-medium">Select Teller</label>
+                <select
+                  value={selectedTellerReport}
+                  onChange={(e) => setSelectedTellerReport(e.target.value)}
+                  className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+                >
+                  <option value="">-- Select Teller --</option>
+                  {tellersForReport.map((t) => (
+                    <option key={t._id} value={t._id}>
+                      {t.name || t.username}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              
+              <div>
+                <label className="block mb-1 text-sm font-medium">Select Supervisor</label>
+                <select
+                  value={selectedSupervisorReport}
+                  onChange={(e) => setSelectedSupervisorReport(e.target.value)}
+                  className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+                >
+                  <option value="">-- Select Supervisor --</option>
+                  {supervisorsForReport.map((s) => (
+                    <option key={s._id} value={s._id}>
+                      {s.name || s.username}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block mb-1 text-sm font-medium">Report Date</label>
+                <input
+                  type="date"
+                  value={overrideDate}
+                  onChange={(e) => setOverrideDate(e.target.value)}
+                  className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+                />
+              </div>
+            </div>
+
+            {selectedTellerReport && selectedSupervisorReport && (
+              <div className="grid md:grid-cols-2 gap-3">
+                <div>
+                  <label className="block mb-1 text-sm font-medium">System Balance</label>
+                  <input
+                    type="number"
+                    step="0.01"
+                    value={reportOverride.systemBalance}
+                    onChange={(e) => {
+                      const systemBalance = e.target.value;
+                      const cashOnHand = reportOverride.cashOnHand;
+                      
+                      // Auto-calculate short/over when both values exist
+                      if (systemBalance && cashOnHand) {
+                        const diff = parseFloat(cashOnHand) - parseFloat(systemBalance);
+                        if (diff < 0) {
+                          // Negative = Short
+                          setReportOverride({
+                            ...reportOverride, 
+                            systemBalance,
+                            short: Math.abs(diff).toFixed(2),
+                            over: "0"
+                          });
+                        } else if (diff > 0) {
+                          // Positive = Over
+                          setReportOverride({
+                            ...reportOverride, 
+                            systemBalance,
+                            short: "0",
+                            over: diff.toFixed(2)
+                          });
+                        } else {
+                          // Equal = No short/over
+                          setReportOverride({
+                            ...reportOverride, 
+                            systemBalance,
+                            short: "0",
+                            over: "0"
+                          });
+                        }
+                      } else {
+                        setReportOverride({...reportOverride, systemBalance});
+                      }
+                    }}
+                    placeholder="0.00"
+                    className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+                  />
+                </div>
+                <div>
+                  <label className="block mb-1 text-sm font-medium">Cash on Hand</label>
+                  <input
+                    type="number"
+                    step="0.01"
+                    value={reportOverride.cashOnHand}
+                    onChange={(e) => {
+                      const cashOnHand = e.target.value;
+                      const systemBalance = reportOverride.systemBalance;
+                      
+                      // Auto-calculate short/over when both values exist
+                      if (systemBalance && cashOnHand) {
+                        const diff = parseFloat(cashOnHand) - parseFloat(systemBalance);
+                        if (diff < 0) {
+                          // Negative = Short
+                          setReportOverride({
+                            ...reportOverride, 
+                            cashOnHand,
+                            short: Math.abs(diff).toFixed(2),
+                            over: "0"
+                          });
+                        } else if (diff > 0) {
+                          // Positive = Over
+                          setReportOverride({
+                            ...reportOverride, 
+                            cashOnHand,
+                            short: "0",
+                            over: diff.toFixed(2)
+                          });
+                        } else {
+                          // Equal = No short/over
+                          setReportOverride({
+                            ...reportOverride, 
+                            cashOnHand,
+                            short: "0",
+                            over: "0"
+                          });
+                        }
+                      } else {
+                        setReportOverride({...reportOverride, cashOnHand});
+                      }
+                    }}
+                    placeholder="0.00"
+                    className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+                  />
+                </div>
+                <div>
+                  <label className="block mb-1 text-sm font-medium">Short (Auto-calculated)</label>
+                  <input
+                    type="number"
+                    step="0.01"
+                    value={reportOverride.short}
+                    readOnly
+                    placeholder="0.00"
+                    className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 cursor-not-allowed"
+                  />
+                </div>
+                <div>
+                  <label className="block mb-1 text-sm font-medium">Over (Auto-calculated)</label>
+                  <input
+                    type="number"
+                    step="0.01"
+                    value={reportOverride.over}
+                    readOnly
+                    placeholder="0.00"
+                    className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 cursor-not-allowed"
+                  />
+                </div>
+              </div>
+            )}
+
+            <button
+              onClick={overrideTellerReport}
+              disabled={!selectedTellerReport || overriding}
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Edit3 className="w-4 h-4" />
+              {overriding ? "Overriding..." : "Override Report"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* �🔑 Change User Password - ADMIN ONLY */}
+      {isAdmin && (
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+          <h2 className="font-semibold text-lg mb-3 flex items-center gap-2">
+            <Key className="w-5 h-5" />
+            Change User Password
+          </h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+            Change password for any user (admin, supervisor, or teller)
+          </p>
+          <div className="grid md:grid-cols-3 gap-3 items-end">
+            <div>
+              <label className="block mb-1 text-sm font-medium">Select User</label>
+              <select
+                value={selectedUser}
+                onChange={(e) => setSelectedUser(e.target.value)}
+                className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+              >
+                <option value="">-- Select User --</option>
+                {users.map((u) => (
+                  <option key={u._id} value={u._id}>
+                    {u.name || u.username} ({u.role})
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block mb-1 text-sm font-medium">New Password</label>
+              <input
+                type="password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                placeholder="Enter new password"
+                className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+            <button
+              onClick={changeUserPassword}
+              disabled={!selectedUser || !newPassword || changingPassword}
+              className="flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Key className="w-4 h-4" />
+              {changingPassword ? "Changing..." : "Change Password"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* 🔑 Change Own Password - SUPERVISOR & TELLER ONLY */}
+      {!isAdmin && (
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+          <h2 className="font-semibold text-lg mb-3 flex items-center gap-2">
+            <Key className="w-5 h-5" />
+            Change My Password
+          </h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+            Update your account password
+          </p>
+          <div className="space-y-3 max-w-md">
+            <div>
+              <label className="block mb-1 text-sm font-medium">Current Password</label>
+              <input
+                type="password"
+                value={currentPassword}
+                onChange={(e) => setCurrentPassword(e.target.value)}
+                placeholder="Enter current password"
+                className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+            <div>
+              <label className="block mb-1 text-sm font-medium">New Password</label>
+              <input
+                type="password"
+                value={ownNewPassword}
+                onChange={(e) => setOwnNewPassword(e.target.value)}
+                placeholder="Enter new password (min 4 chars)"
+                className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+            <div>
+              <label className="block mb-1 text-sm font-medium">Confirm New Password</label>
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Confirm new password"
+                className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+            <button
+              onClick={changeOwnPassword}
+              disabled={!currentPassword || !ownNewPassword || !confirmPassword || changingPassword}
+              className="flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Key className="w-4 h-4" />
+              {changingPassword ? "Changing..." : "Change Password"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* 💰 Sync Payroll from Reports - ADMIN ONLY */}
+      {isAdmin && (
+        <div className="admin-section-wrapper">
+        {/* 🔁 Backfill / Recalculate Payrolls - SUPER ADMIN ONLY */}
+        {isSuperAdmin && (
+          <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+            <h2 className="font-semibold text-lg mb-3 flex items-center gap-2">
+              <History className="w-5 h-5" />
+              Backfill / Recalculate Payrolls
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+              Recalculate payroll totals (base + over - short/terms - deduction - withdrawal) over a date range. Use with caution — changes are applied in-place.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-3 items-end">
+              <div>
+                <label className="text-sm font-medium block mb-1">Start date</label>
+                <input type="date" value={backfillStartDate} onChange={(e) => setBackfillStartDate(e.target.value)} className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" />
+              </div>
+              <div>
+                <label className="text-sm font-medium block mb-1">End date</label>
+                <input type="date" value={backfillEndDate} onChange={(e) => setBackfillEndDate(e.target.value)} className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" />
+              </div>
+
+              <div className="flex items-center gap-2">
+                <button onClick={runBackfillRecalculate} disabled={backfillRunning} className="px-4 py-2 bg-rose-600 text-white rounded-lg hover:opacity-90 disabled:opacity-50 flex items-center gap-2">
+                  {backfillRunning ? (<><RefreshCw className="w-4 h-4 animate-spin"/> Running...</>) : (<><RefreshCw className="w-4 h-4"/> Run Backfill</>)}
+                </button>
+                <button onClick={() => { setBackfillLogs([]); setBackfillResult(null); }} className="px-3 py-2 border rounded text-sm">Clear</button>
+              </div>
+            </div>
+
+            <div className="mt-4">
+              <label className="block text-xs mb-1">Progress / Logs</label>
+              <textarea readOnly value={(backfillLogs || []).join('\n')} rows={6} className="w-full p-2 border rounded bg-gray-50 dark:bg-gray-900 text-xs" />
+              {backfillResult && (
+                <div className="mt-3 text-sm text-green-700 dark:text-green-300">
+                  ✅ Processed: {backfillResult.processed || 0} — Errors: {(backfillResult.errors && backfillResult.errors.length) || 0}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+        
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
+          <h2 className="font-semibold text-lg mb-3 flex items-center gap-2">
+            <DollarSign className="w-5 h-5" />
+            Sync Payroll from Teller Reports
+          </h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+            Automatically calculate and update teller payrolls based on their reports. 
+            This will aggregate "over" amounts as bonuses and "short" amounts as deductions.
+          </p>
+          <button
+            onClick={syncAllTellerPayrolls}
+            disabled={syncingPayroll}
+            className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <RefreshCw className={`w-4 h-4 ${syncingPayroll ? 'animate-spin' : ''}`} />
+            {syncingPayroll ? "Syncing..." : "Sync All Teller Payrolls"}
+          </button>
+        </div>
+      )}
+
+      {isAdmin && (
+        <button
+          onClick={saveAll}
+          disabled={saving}
+          className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-md shadow"
+        >
+          {saving ? "💾 Saving..." : "✅ Save Settings"}
+        </button>
+      )}
+    </div>
+  );
+}
+
+function ColorInput({ label, value, onChange }) {
+  return (
+    <div>
+      <label className="block mb-1 font-medium">{label}</label>
+      <input
+        type="color"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-16 h-8 p-1 border rounded cursor-pointer"
+      />
+    </div>
+  );
+}

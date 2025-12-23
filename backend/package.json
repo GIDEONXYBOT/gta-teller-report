@@ -1,0 +1,46 @@
+{
+  "name": "rmi-teller-report-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node seedAdmin.js",
+    "migrate:menu-approvals": "node scripts/migrate-menu-approvals.js",
+    "smoke:kpi": "node scripts/smoke-kpi.js",
+    "fix-base-salaries": "node fix-teller-base-salaries.js",
+    "test": "mocha --exit \"test/**/*.test.js\""
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.0",
+    "axios": "^1.13.2",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^2.4.3",
+    "cheerio": "^1.1.2",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "cron": "^2.1.0",
+    "detect-port": "^2.1.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.2.1",
+    "express-validator": "^7.3.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.8.7",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "node-schedule": "^2.1.1",
+    "nodemailer": "^6.9.7",
+    "sharp": "^0.32.4",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.1",
+    "three": "^0.181.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "mocha": "^10.2.0",
+    "chai": "^4.3.8"
+  }
+}

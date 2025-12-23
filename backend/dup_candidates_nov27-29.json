@@ -1,0 +1,222 @@
+﻿[
+    {
+        "id":  "69292d08d85e54665b3bf554",
+        "userId":  "6927ebdc0fb12b256b80e0c5",
+        "username":  "024.Marygold",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-28T05:03:05.020Z",
+        "keptPayroll":  "69284c8e53072629290461e3"
+    },
+    {
+        "id":  "692a707ced1c883ba1ec5dd8",
+        "userId":  "69283694ace39b9975744ff2",
+        "username":  "008.Dianne",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-29T04:03:08.396Z",
+        "keptPayroll":  "69284c8f53072629290461e5"
+    },
+    {
+        "id":  "69292b77bf9e209b10834115",
+        "userId":  "6927ea690fb12b256b80e090",
+        "username":  "Alfonso00",
+        "baseSalary":  600,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  600,
+        "createdAt":  "2025-11-28T04:56:23.758Z",
+        "keptPayroll":  "69284c8fbf9e209b10833dbb"
+    },
+    {
+        "id":  "692a707cbf9e209b10834b18",
+        "userId":  "6927ea690fb12b256b80e090",
+        "username":  "Alfonso00",
+        "baseSalary":  600,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  600,
+        "createdAt":  "2025-11-29T04:03:08.684Z",
+        "keptPayroll":  "69284c8fbf9e209b10833dbb"
+    },
+    {
+        "id":  "69292b77d85e54665b3bf484",
+        "userId":  "6927f10f0fb12b256b80e371",
+        "username":  "007.Shymaine",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-28T04:56:23.812Z",
+        "keptPayroll":  "69284c8f53072629290461f6"
+    },
+    {
+        "id":  "692a707ced1c883ba1ec5e03",
+        "userId":  "6927f10f0fb12b256b80e371",
+        "username":  "007.Shymaine",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-29T04:03:08.802Z",
+        "keptPayroll":  "69284c8f53072629290461f6"
+    },
+    {
+        "id":  "69292b77d85e54665b3bf480",
+        "userId":  "69283610ace39b9975744f9e",
+        "username":  "026.Karyle",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-28T04:56:23.806Z",
+        "keptPayroll":  "69284c8f5307262929046208"
+    },
+    {
+        "id":  "692a707ced1c883ba1ec5ddc",
+        "userId":  "69283610ace39b9975744f9e",
+        "username":  "026.Karyle",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-29T04:03:08.400Z",
+        "keptPayroll":  "69284c8f5307262929046208"
+    },
+    {
+        "id":  "69292b77d85e54665b3bf46e",
+        "userId":  "6927ed6c0fb12b256b80e191",
+        "username":  "006.erika",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-28T04:56:23.461Z",
+        "keptPayroll":  "69284c8f5307262929046206"
+    },
+    {
+        "id":  "692a707ced1c883ba1ec5dd4",
+        "userId":  "6927ed6c0fb12b256b80e191",
+        "username":  "006.erika",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-29T04:03:08.392Z",
+        "keptPayroll":  "69284c8f5307262929046206"
+    },
+    {
+        "id":  "69292d09d85e54665b3bf55a",
+        "userId":  "6928359aace39b9975744f94",
+        "username":  "010.michelle",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-28T05:03:05.147Z",
+        "keptPayroll":  "69284c8f530726292904620a"
+    },
+    {
+        "id":  "692a707ced1c883ba1ec5dd2",
+        "userId":  "6928359aace39b9975744f94",
+        "username":  "010.michelle",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-29T04:03:08.391Z",
+        "keptPayroll":  "69284c8f530726292904620a"
+    },
+    {
+        "id":  "69292b77d85e54665b3bf482",
+        "userId":  "692858d0530726292904655b",
+        "username":  "032.juliet",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-28T04:56:23.807Z",
+        "keptPayroll":  "69285a395307262929046636"
+    },
+    {
+        "id":  "692a707ced1c883ba1ec5de1",
+        "userId":  "692858d0530726292904655b",
+        "username":  "032.juliet",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-29T04:03:08.408Z",
+        "keptPayroll":  "69285a395307262929046636"
+    },
+    {
+        "id":  "692a707ced1c883ba1ec5dd6",
+        "userId":  "6927ec970fb12b256b80e10b",
+        "username":  "018.honey",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-29T04:03:08.393Z",
+        "keptPayroll":  "69292b77d85e54665b3bf475"
+    },
+    {
+        "id":  "692a707ced1c883ba1ec5e05",
+        "userId":  "69287a6ebb4eb69d4f8e948c",
+        "username":  "017.marie",
+        "baseSalary":  0,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  0,
+        "createdAt":  "2025-11-29T04:03:08.801Z",
+        "keptPayroll":  "69292b77d85e54665b3bf478"
+    },
+    {
+        "id":  "692a707ced1c883ba1ec5dda",
+        "userId":  "6927ef090fb12b256b80e261",
+        "username":  "011.Sheena",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-29T04:03:08.400Z",
+        "keptPayroll":  "69292d09d85e54665b3bf55c"
+    },
+    {
+        "id":  "692a707ced1c883ba1ec5dde",
+        "userId":  "6927fb870fb12b256b80e63f",
+        "username":  "005.tine",
+        "baseSalary":  450,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  450,
+        "createdAt":  "2025-11-29T04:03:08.401Z",
+        "keptPayroll":  "69292d09d85e54665b3bf55f"
+    },
+    {
+        "id":  "692aa6df6eca7575854d2d7a",
+        "userId":  "692891f373618b1c9cf57d84",
+        "username":  "031.charm",
+        "baseSalary":  0,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  0,
+        "createdAt":  "2025-11-29T07:55:11.762Z",
+        "keptPayroll":  "69292d09d85e54665b3bf561"
+    },
+    {
+        "id":  "692a707ced1c883ba1ec5e08",
+        "userId":  "69287ae4bb4eb69d4f8e94a4",
+        "username":  "023.Jenessa",
+        "baseSalary":  0,
+        "over":  0,
+        "short":  0,
+        "totalSalary":  0,
+        "createdAt":  "2025-11-29T04:03:08.801Z",
+        "keptPayroll":  "6929bf0eb8df54cb4a870f78"
+    }
+]

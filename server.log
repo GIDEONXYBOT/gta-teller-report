@@ -1,0 +1,9 @@
+🔄 Connecting to MongoDB...
+🗂️ Serving frontend dist from: C:\Users\Gideon\OneDrive\Desktop\rmi-teller-report\frontend\dist
+🚀 Backend Server Started
+📡 Local: http://localhost:5000
+📡 Network: http://192.168.0.167:5000
+✅ MongoDB connected successfully
+⏸️  Supervisor assignment auto-reset is DISABLED
+✅ Supervisor reset scheduler initialized
+📥 GET /api/schedule/tomorrow from 127.0.0.1

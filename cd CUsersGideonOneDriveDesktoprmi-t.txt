@@ -1,0 +1,6 @@
+cd C:\Users\Gideon\OneDrive\Desktop\rmi-teller-report\backend
+node server.js
+
+
+cd C:\Users\Gideon\OneDrive\Desktop\rmi-teller-report\frontend
+npm run dev

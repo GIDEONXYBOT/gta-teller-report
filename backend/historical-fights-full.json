@@ -1,0 +1,1802 @@
+[
+  {
+    "_id": "69469981924934e8ca6faca1",
+    "id": 1,
+    "batch": {
+      "fightSequence": 1
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 27674,
+      "blueTotalBetAmount": 10565,
+      "drawTotalBetAmount": 4795
+    },
+    "createdAt": "2025-12-20T10:42:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469981924934e8ca6faca2",
+    "id": 2,
+    "batch": {
+      "fightSequence": 2
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 26134,
+      "blueTotalBetAmount": 11028,
+      "drawTotalBetAmount": 5790
+    },
+    "createdAt": "2025-12-20T10:43:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469981924934e8ca6faca3",
+    "id": 3,
+    "batch": {
+      "fightSequence": 3
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 46626,
+      "blueTotalBetAmount": 10729,
+      "drawTotalBetAmount": 8890
+    },
+    "createdAt": "2025-12-20T10:44:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469981924934e8ca6faca4",
+    "id": 4,
+    "batch": {
+      "fightSequence": 4
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 33304,
+      "blueTotalBetAmount": 49275,
+      "drawTotalBetAmount": 1968
+    },
+    "createdAt": "2025-12-20T10:45:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6faca5",
+    "id": 5,
+    "batch": {
+      "fightSequence": 5
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 30707,
+      "blueTotalBetAmount": 38986,
+      "drawTotalBetAmount": 1547
+    },
+    "createdAt": "2025-12-20T10:46:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6faca6",
+    "id": 6,
+    "batch": {
+      "fightSequence": 6
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 38381,
+      "blueTotalBetAmount": 56416,
+      "drawTotalBetAmount": 2650
+    },
+    "createdAt": "2025-12-20T10:47:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6faca7",
+    "id": 7,
+    "batch": {
+      "fightSequence": 7
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 48182,
+      "blueTotalBetAmount": 11564,
+      "drawTotalBetAmount": 1409
+    },
+    "createdAt": "2025-12-20T10:48:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6faca8",
+    "id": 8,
+    "batch": {
+      "fightSequence": 8
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 40362,
+      "blueTotalBetAmount": 25425,
+      "drawTotalBetAmount": 7918
+    },
+    "createdAt": "2025-12-20T10:49:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6faca9",
+    "id": 9,
+    "batch": {
+      "fightSequence": 9
+    },
+    "result1": "cancel",
+    "details": {
+      "redTotalBetAmount": 10831,
+      "blueTotalBetAmount": 10794,
+      "drawTotalBetAmount": 3344
+    },
+    "createdAt": "2025-12-20T10:50:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facaa",
+    "id": 10,
+    "batch": {
+      "fightSequence": 10
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 53674,
+      "blueTotalBetAmount": 35135,
+      "drawTotalBetAmount": 8163
+    },
+    "createdAt": "2025-12-20T10:51:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facab",
+    "id": 11,
+    "batch": {
+      "fightSequence": 11
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 18085,
+      "blueTotalBetAmount": 37678,
+      "drawTotalBetAmount": 2236
+    },
+    "createdAt": "2025-12-20T10:52:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facac",
+    "id": 12,
+    "batch": {
+      "fightSequence": 12
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 18430,
+      "blueTotalBetAmount": 28455,
+      "drawTotalBetAmount": 2174
+    },
+    "createdAt": "2025-12-20T10:53:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facad",
+    "id": 13,
+    "batch": {
+      "fightSequence": 13
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 23116,
+      "blueTotalBetAmount": 44113,
+      "drawTotalBetAmount": 6489
+    },
+    "createdAt": "2025-12-20T10:54:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facae",
+    "id": 14,
+    "batch": {
+      "fightSequence": 14
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 55620,
+      "blueTotalBetAmount": 55477,
+      "drawTotalBetAmount": 9031
+    },
+    "createdAt": "2025-12-20T10:55:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facaf",
+    "id": 15,
+    "batch": {
+      "fightSequence": 15
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 32462,
+      "blueTotalBetAmount": 19230,
+      "drawTotalBetAmount": 3662
+    },
+    "createdAt": "2025-12-20T10:56:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facb0",
+    "id": 16,
+    "batch": {
+      "fightSequence": 16
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 56775,
+      "blueTotalBetAmount": 24574,
+      "drawTotalBetAmount": 6403
+    },
+    "createdAt": "2025-12-20T10:57:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facb1",
+    "id": 17,
+    "batch": {
+      "fightSequence": 17
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 31117,
+      "blueTotalBetAmount": 45971,
+      "drawTotalBetAmount": 7514
+    },
+    "createdAt": "2025-12-20T10:58:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facb2",
+    "id": 18,
+    "batch": {
+      "fightSequence": 18
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 41217,
+      "blueTotalBetAmount": 13321,
+      "drawTotalBetAmount": 5965
+    },
+    "createdAt": "2025-12-20T10:59:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facb3",
+    "id": 19,
+    "batch": {
+      "fightSequence": 19
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 56889,
+      "blueTotalBetAmount": 15958,
+      "drawTotalBetAmount": 5301
+    },
+    "createdAt": "2025-12-20T11:00:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facb4",
+    "id": 20,
+    "batch": {
+      "fightSequence": 20
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 58955,
+      "blueTotalBetAmount": 37070,
+      "drawTotalBetAmount": 2332
+    },
+    "createdAt": "2025-12-20T11:01:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facb5",
+    "id": 21,
+    "batch": {
+      "fightSequence": 21
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 24319,
+      "blueTotalBetAmount": 58892,
+      "drawTotalBetAmount": 3082
+    },
+    "createdAt": "2025-12-20T11:02:37.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facb6",
+    "id": 22,
+    "batch": {
+      "fightSequence": 22
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 53752,
+      "blueTotalBetAmount": 27214,
+      "drawTotalBetAmount": 3588
+    },
+    "createdAt": "2025-12-20T11:03:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facb7",
+    "id": 23,
+    "batch": {
+      "fightSequence": 23
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 33838,
+      "blueTotalBetAmount": 35772,
+      "drawTotalBetAmount": 4064
+    },
+    "createdAt": "2025-12-20T11:04:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facb8",
+    "id": 24,
+    "batch": {
+      "fightSequence": 24
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 55785,
+      "blueTotalBetAmount": 29819,
+      "drawTotalBetAmount": 10421
+    },
+    "createdAt": "2025-12-20T11:05:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facb9",
+    "id": 25,
+    "batch": {
+      "fightSequence": 25
+    },
+    "result1": "draw",
+    "details": {
+      "redTotalBetAmount": 33036,
+      "blueTotalBetAmount": 24113,
+      "drawTotalBetAmount": 10732
+    },
+    "createdAt": "2025-12-20T11:06:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facba",
+    "id": 26,
+    "batch": {
+      "fightSequence": 26
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 15205,
+      "blueTotalBetAmount": 47047,
+      "drawTotalBetAmount": 8038
+    },
+    "createdAt": "2025-12-20T11:07:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facbb",
+    "id": 27,
+    "batch": {
+      "fightSequence": 27
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 46548,
+      "blueTotalBetAmount": 52265,
+      "drawTotalBetAmount": 9997
+    },
+    "createdAt": "2025-12-20T11:08:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facbc",
+    "id": 28,
+    "batch": {
+      "fightSequence": 28
+    },
+    "result1": "cancel",
+    "details": {
+      "redTotalBetAmount": 50919,
+      "blueTotalBetAmount": 10732,
+      "drawTotalBetAmount": 3417
+    },
+    "createdAt": "2025-12-20T11:09:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facbd",
+    "id": 29,
+    "batch": {
+      "fightSequence": 29
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 29044,
+      "blueTotalBetAmount": 55163,
+      "drawTotalBetAmount": 10115
+    },
+    "createdAt": "2025-12-20T11:10:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facbe",
+    "id": 30,
+    "batch": {
+      "fightSequence": 30
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 27436,
+      "blueTotalBetAmount": 45227,
+      "drawTotalBetAmount": 2559
+    },
+    "createdAt": "2025-12-20T11:11:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facbf",
+    "id": 31,
+    "batch": {
+      "fightSequence": 31
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 12874,
+      "blueTotalBetAmount": 34152,
+      "drawTotalBetAmount": 9023
+    },
+    "createdAt": "2025-12-20T11:12:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facc0",
+    "id": 32,
+    "batch": {
+      "fightSequence": 32
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 16526,
+      "blueTotalBetAmount": 45864,
+      "drawTotalBetAmount": 2949
+    },
+    "createdAt": "2025-12-20T11:13:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facc1",
+    "id": 33,
+    "batch": {
+      "fightSequence": 33
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 27496,
+      "blueTotalBetAmount": 32955,
+      "drawTotalBetAmount": 8800
+    },
+    "createdAt": "2025-12-20T11:14:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facc2",
+    "id": 34,
+    "batch": {
+      "fightSequence": 34
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 12234,
+      "blueTotalBetAmount": 24211,
+      "drawTotalBetAmount": 8350
+    },
+    "createdAt": "2025-12-20T11:15:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facc3",
+    "id": 35,
+    "batch": {
+      "fightSequence": 35
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 11668,
+      "blueTotalBetAmount": 28074,
+      "drawTotalBetAmount": 10711
+    },
+    "createdAt": "2025-12-20T11:16:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facc4",
+    "id": 36,
+    "batch": {
+      "fightSequence": 36
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 15419,
+      "blueTotalBetAmount": 43448,
+      "drawTotalBetAmount": 4177
+    },
+    "createdAt": "2025-12-20T11:17:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facc5",
+    "id": 37,
+    "batch": {
+      "fightSequence": 37
+    },
+    "result1": "draw",
+    "details": {
+      "redTotalBetAmount": 55061,
+      "blueTotalBetAmount": 18846,
+      "drawTotalBetAmount": 1085
+    },
+    "createdAt": "2025-12-20T11:18:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facc6",
+    "id": 38,
+    "batch": {
+      "fightSequence": 38
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 10340,
+      "blueTotalBetAmount": 57878,
+      "drawTotalBetAmount": 4891
+    },
+    "createdAt": "2025-12-20T11:19:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facc7",
+    "id": 39,
+    "batch": {
+      "fightSequence": 39
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 23749,
+      "blueTotalBetAmount": 33182,
+      "drawTotalBetAmount": 1500
+    },
+    "createdAt": "2025-12-20T11:20:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facc8",
+    "id": 40,
+    "batch": {
+      "fightSequence": 40
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 27412,
+      "blueTotalBetAmount": 16891,
+      "drawTotalBetAmount": 8617
+    },
+    "createdAt": "2025-12-20T11:21:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facc9",
+    "id": 41,
+    "batch": {
+      "fightSequence": 41
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 12579,
+      "blueTotalBetAmount": 56773,
+      "drawTotalBetAmount": 5783
+    },
+    "createdAt": "2025-12-20T11:22:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facca",
+    "id": 42,
+    "batch": {
+      "fightSequence": 42
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 34601,
+      "blueTotalBetAmount": 34745,
+      "drawTotalBetAmount": 9047
+    },
+    "createdAt": "2025-12-20T11:23:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6faccb",
+    "id": 43,
+    "batch": {
+      "fightSequence": 43
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 48252,
+      "blueTotalBetAmount": 37029,
+      "drawTotalBetAmount": 10519
+    },
+    "createdAt": "2025-12-20T11:24:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6faccc",
+    "id": 44,
+    "batch": {
+      "fightSequence": 44
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 21711,
+      "blueTotalBetAmount": 38769,
+      "drawTotalBetAmount": 9564
+    },
+    "createdAt": "2025-12-20T11:25:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6faccd",
+    "id": 45,
+    "batch": {
+      "fightSequence": 45
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 56013,
+      "blueTotalBetAmount": 29667,
+      "drawTotalBetAmount": 2708
+    },
+    "createdAt": "2025-12-20T11:26:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facce",
+    "id": 46,
+    "batch": {
+      "fightSequence": 46
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 18105,
+      "blueTotalBetAmount": 36605,
+      "drawTotalBetAmount": 4046
+    },
+    "createdAt": "2025-12-20T11:27:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6faccf",
+    "id": 47,
+    "batch": {
+      "fightSequence": 47
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 59722,
+      "blueTotalBetAmount": 57118,
+      "drawTotalBetAmount": 7366
+    },
+    "createdAt": "2025-12-20T11:28:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facd0",
+    "id": 48,
+    "batch": {
+      "fightSequence": 48
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 25757,
+      "blueTotalBetAmount": 37319,
+      "drawTotalBetAmount": 5116
+    },
+    "createdAt": "2025-12-20T11:29:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facd1",
+    "id": 49,
+    "batch": {
+      "fightSequence": 49
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 55694,
+      "blueTotalBetAmount": 16103,
+      "drawTotalBetAmount": 3635
+    },
+    "createdAt": "2025-12-20T11:30:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facd2",
+    "id": 50,
+    "batch": {
+      "fightSequence": 50
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 40016,
+      "blueTotalBetAmount": 18441,
+      "drawTotalBetAmount": 7831
+    },
+    "createdAt": "2025-12-20T11:31:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facd3",
+    "id": 51,
+    "batch": {
+      "fightSequence": 51
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 25907,
+      "blueTotalBetAmount": 23941,
+      "drawTotalBetAmount": 6311
+    },
+    "createdAt": "2025-12-20T11:32:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facd4",
+    "id": 52,
+    "batch": {
+      "fightSequence": 52
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 43215,
+      "blueTotalBetAmount": 52272,
+      "drawTotalBetAmount": 3160
+    },
+    "createdAt": "2025-12-20T11:33:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facd5",
+    "id": 53,
+    "batch": {
+      "fightSequence": 53
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 46037,
+      "blueTotalBetAmount": 40777,
+      "drawTotalBetAmount": 7290
+    },
+    "createdAt": "2025-12-20T11:34:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facd6",
+    "id": 54,
+    "batch": {
+      "fightSequence": 54
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 49971,
+      "blueTotalBetAmount": 39584,
+      "drawTotalBetAmount": 9973
+    },
+    "createdAt": "2025-12-20T11:35:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facd7",
+    "id": 55,
+    "batch": {
+      "fightSequence": 55
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 23873,
+      "blueTotalBetAmount": 38095,
+      "drawTotalBetAmount": 6919
+    },
+    "createdAt": "2025-12-20T11:36:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facd8",
+    "id": 56,
+    "batch": {
+      "fightSequence": 56
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 55180,
+      "blueTotalBetAmount": 59679,
+      "drawTotalBetAmount": 7978
+    },
+    "createdAt": "2025-12-20T11:37:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facd9",
+    "id": 57,
+    "batch": {
+      "fightSequence": 57
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 41203,
+      "blueTotalBetAmount": 34278,
+      "drawTotalBetAmount": 10869
+    },
+    "createdAt": "2025-12-20T11:38:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facda",
+    "id": 58,
+    "batch": {
+      "fightSequence": 58
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 32101,
+      "blueTotalBetAmount": 18321,
+      "drawTotalBetAmount": 3667
+    },
+    "createdAt": "2025-12-20T11:39:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facdb",
+    "id": 59,
+    "batch": {
+      "fightSequence": 59
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 43019,
+      "blueTotalBetAmount": 56210,
+      "drawTotalBetAmount": 1035
+    },
+    "createdAt": "2025-12-20T11:40:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facdc",
+    "id": 60,
+    "batch": {
+      "fightSequence": 60
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 11079,
+      "blueTotalBetAmount": 26512,
+      "drawTotalBetAmount": 6982
+    },
+    "createdAt": "2025-12-20T11:41:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facdd",
+    "id": 61,
+    "batch": {
+      "fightSequence": 61
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 50807,
+      "blueTotalBetAmount": 45969,
+      "drawTotalBetAmount": 5588
+    },
+    "createdAt": "2025-12-20T11:42:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facde",
+    "id": 62,
+    "batch": {
+      "fightSequence": 62
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 26329,
+      "blueTotalBetAmount": 47392,
+      "drawTotalBetAmount": 1649
+    },
+    "createdAt": "2025-12-20T11:43:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facdf",
+    "id": 63,
+    "batch": {
+      "fightSequence": 63
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 26035,
+      "blueTotalBetAmount": 50534,
+      "drawTotalBetAmount": 8915
+    },
+    "createdAt": "2025-12-20T11:44:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6face0",
+    "id": 64,
+    "batch": {
+      "fightSequence": 64
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 18010,
+      "blueTotalBetAmount": 34705,
+      "drawTotalBetAmount": 10424
+    },
+    "createdAt": "2025-12-20T11:45:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6face1",
+    "id": 65,
+    "batch": {
+      "fightSequence": 65
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 34976,
+      "blueTotalBetAmount": 53372,
+      "drawTotalBetAmount": 7057
+    },
+    "createdAt": "2025-12-20T11:46:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6face2",
+    "id": 66,
+    "batch": {
+      "fightSequence": 66
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 14051,
+      "blueTotalBetAmount": 11218,
+      "drawTotalBetAmount": 3901
+    },
+    "createdAt": "2025-12-20T11:47:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6face3",
+    "id": 67,
+    "batch": {
+      "fightSequence": 67
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 37436,
+      "blueTotalBetAmount": 23602,
+      "drawTotalBetAmount": 2634
+    },
+    "createdAt": "2025-12-20T11:48:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6face4",
+    "id": 68,
+    "batch": {
+      "fightSequence": 68
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 18474,
+      "blueTotalBetAmount": 49772,
+      "drawTotalBetAmount": 6157
+    },
+    "createdAt": "2025-12-20T11:49:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6face5",
+    "id": 69,
+    "batch": {
+      "fightSequence": 69
+    },
+    "result1": "cancel",
+    "details": {
+      "redTotalBetAmount": 46375,
+      "blueTotalBetAmount": 25990,
+      "drawTotalBetAmount": 4959
+    },
+    "createdAt": "2025-12-20T11:50:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6face6",
+    "id": 70,
+    "batch": {
+      "fightSequence": 70
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 19948,
+      "blueTotalBetAmount": 18421,
+      "drawTotalBetAmount": 9595
+    },
+    "createdAt": "2025-12-20T11:51:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6face7",
+    "id": 71,
+    "batch": {
+      "fightSequence": 71
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 58248,
+      "blueTotalBetAmount": 24472,
+      "drawTotalBetAmount": 8596
+    },
+    "createdAt": "2025-12-20T11:52:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6face8",
+    "id": 72,
+    "batch": {
+      "fightSequence": 72
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 25867,
+      "blueTotalBetAmount": 59325,
+      "drawTotalBetAmount": 5307
+    },
+    "createdAt": "2025-12-20T11:53:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6face9",
+    "id": 73,
+    "batch": {
+      "fightSequence": 73
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 39744,
+      "blueTotalBetAmount": 36635,
+      "drawTotalBetAmount": 2609
+    },
+    "createdAt": "2025-12-20T11:54:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facea",
+    "id": 74,
+    "batch": {
+      "fightSequence": 74
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 24033,
+      "blueTotalBetAmount": 36328,
+      "drawTotalBetAmount": 4804
+    },
+    "createdAt": "2025-12-20T11:55:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6faceb",
+    "id": 75,
+    "batch": {
+      "fightSequence": 75
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 53045,
+      "blueTotalBetAmount": 11152,
+      "drawTotalBetAmount": 3884
+    },
+    "createdAt": "2025-12-20T11:56:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facec",
+    "id": 76,
+    "batch": {
+      "fightSequence": 76
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 15071,
+      "blueTotalBetAmount": 22530,
+      "drawTotalBetAmount": 1547
+    },
+    "createdAt": "2025-12-20T11:57:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6faced",
+    "id": 77,
+    "batch": {
+      "fightSequence": 77
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 33235,
+      "blueTotalBetAmount": 45331,
+      "drawTotalBetAmount": 2312
+    },
+    "createdAt": "2025-12-20T11:58:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facee",
+    "id": 78,
+    "batch": {
+      "fightSequence": 78
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 56802,
+      "blueTotalBetAmount": 21462,
+      "drawTotalBetAmount": 7572
+    },
+    "createdAt": "2025-12-20T11:59:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facef",
+    "id": 79,
+    "batch": {
+      "fightSequence": 79
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 23045,
+      "blueTotalBetAmount": 50604,
+      "drawTotalBetAmount": 10957
+    },
+    "createdAt": "2025-12-20T12:00:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facf0",
+    "id": 80,
+    "batch": {
+      "fightSequence": 80
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 46574,
+      "blueTotalBetAmount": 41933,
+      "drawTotalBetAmount": 9650
+    },
+    "createdAt": "2025-12-20T12:01:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facf1",
+    "id": 81,
+    "batch": {
+      "fightSequence": 81
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 18721,
+      "blueTotalBetAmount": 48492,
+      "drawTotalBetAmount": 2444
+    },
+    "createdAt": "2025-12-20T12:02:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facf2",
+    "id": 82,
+    "batch": {
+      "fightSequence": 82
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 16313,
+      "blueTotalBetAmount": 43037,
+      "drawTotalBetAmount": 7416
+    },
+    "createdAt": "2025-12-20T12:03:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facf3",
+    "id": 83,
+    "batch": {
+      "fightSequence": 83
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 59628,
+      "blueTotalBetAmount": 15638,
+      "drawTotalBetAmount": 1835
+    },
+    "createdAt": "2025-12-20T12:04:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facf4",
+    "id": 84,
+    "batch": {
+      "fightSequence": 84
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 27649,
+      "blueTotalBetAmount": 54648,
+      "drawTotalBetAmount": 5219
+    },
+    "createdAt": "2025-12-20T12:05:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facf5",
+    "id": 85,
+    "batch": {
+      "fightSequence": 85
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 31394,
+      "blueTotalBetAmount": 50939,
+      "drawTotalBetAmount": 2423
+    },
+    "createdAt": "2025-12-20T12:06:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facf6",
+    "id": 86,
+    "batch": {
+      "fightSequence": 86
+    },
+    "result1": "draw",
+    "details": {
+      "redTotalBetAmount": 49619,
+      "blueTotalBetAmount": 20611,
+      "drawTotalBetAmount": 4662
+    },
+    "createdAt": "2025-12-20T12:07:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facf7",
+    "id": 87,
+    "batch": {
+      "fightSequence": 87
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 48168,
+      "blueTotalBetAmount": 59241,
+      "drawTotalBetAmount": 8188
+    },
+    "createdAt": "2025-12-20T12:08:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facf8",
+    "id": 88,
+    "batch": {
+      "fightSequence": 88
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 29720,
+      "blueTotalBetAmount": 14405,
+      "drawTotalBetAmount": 7508
+    },
+    "createdAt": "2025-12-20T12:09:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facf9",
+    "id": 89,
+    "batch": {
+      "fightSequence": 89
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 24153,
+      "blueTotalBetAmount": 53632,
+      "drawTotalBetAmount": 5946
+    },
+    "createdAt": "2025-12-20T12:10:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facfa",
+    "id": 90,
+    "batch": {
+      "fightSequence": 90
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 25218,
+      "blueTotalBetAmount": 51566,
+      "drawTotalBetAmount": 9131
+    },
+    "createdAt": "2025-12-20T12:11:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facfb",
+    "id": 91,
+    "batch": {
+      "fightSequence": 91
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 31196,
+      "blueTotalBetAmount": 34390,
+      "drawTotalBetAmount": 2887
+    },
+    "createdAt": "2025-12-20T12:12:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facfc",
+    "id": 92,
+    "batch": {
+      "fightSequence": 92
+    },
+    "result1": "draw",
+    "details": {
+      "redTotalBetAmount": 44451,
+      "blueTotalBetAmount": 31763,
+      "drawTotalBetAmount": 10776
+    },
+    "createdAt": "2025-12-20T12:13:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facfd",
+    "id": 93,
+    "batch": {
+      "fightSequence": 93
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 14772,
+      "blueTotalBetAmount": 27853,
+      "drawTotalBetAmount": 10980
+    },
+    "createdAt": "2025-12-20T12:14:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facfe",
+    "id": 94,
+    "batch": {
+      "fightSequence": 94
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 44404,
+      "blueTotalBetAmount": 53531,
+      "drawTotalBetAmount": 4146
+    },
+    "createdAt": "2025-12-20T12:15:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6facff",
+    "id": 95,
+    "batch": {
+      "fightSequence": 95
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 36967,
+      "blueTotalBetAmount": 56410,
+      "drawTotalBetAmount": 4559
+    },
+    "createdAt": "2025-12-20T12:16:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad00",
+    "id": 96,
+    "batch": {
+      "fightSequence": 96
+    },
+    "result1": "cancel",
+    "details": {
+      "redTotalBetAmount": 13489,
+      "blueTotalBetAmount": 46378,
+      "drawTotalBetAmount": 7435
+    },
+    "createdAt": "2025-12-20T12:17:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad01",
+    "id": 97,
+    "batch": {
+      "fightSequence": 97
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 53769,
+      "blueTotalBetAmount": 53455,
+      "drawTotalBetAmount": 8165
+    },
+    "createdAt": "2025-12-20T12:18:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad02",
+    "id": 98,
+    "batch": {
+      "fightSequence": 98
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 50528,
+      "blueTotalBetAmount": 13069,
+      "drawTotalBetAmount": 9935
+    },
+    "createdAt": "2025-12-20T12:19:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad03",
+    "id": 99,
+    "batch": {
+      "fightSequence": 99
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 34081,
+      "blueTotalBetAmount": 15621,
+      "drawTotalBetAmount": 7628
+    },
+    "createdAt": "2025-12-20T12:20:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad04",
+    "id": 100,
+    "batch": {
+      "fightSequence": 100
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 42846,
+      "blueTotalBetAmount": 51365,
+      "drawTotalBetAmount": 9903
+    },
+    "createdAt": "2025-12-20T12:21:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad05",
+    "id": 101,
+    "batch": {
+      "fightSequence": 101
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 31257,
+      "blueTotalBetAmount": 44257,
+      "drawTotalBetAmount": 2407
+    },
+    "createdAt": "2025-12-20T12:22:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad06",
+    "id": 102,
+    "batch": {
+      "fightSequence": 102
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 58916,
+      "blueTotalBetAmount": 51876,
+      "drawTotalBetAmount": 5005
+    },
+    "createdAt": "2025-12-20T12:23:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad07",
+    "id": 103,
+    "batch": {
+      "fightSequence": 103
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 34674,
+      "blueTotalBetAmount": 50444,
+      "drawTotalBetAmount": 5037
+    },
+    "createdAt": "2025-12-20T12:24:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad08",
+    "id": 104,
+    "batch": {
+      "fightSequence": 104
+    },
+    "result1": "draw",
+    "details": {
+      "redTotalBetAmount": 38403,
+      "blueTotalBetAmount": 24189,
+      "drawTotalBetAmount": 7071
+    },
+    "createdAt": "2025-12-20T12:25:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad09",
+    "id": 105,
+    "batch": {
+      "fightSequence": 105
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 47745,
+      "blueTotalBetAmount": 19211,
+      "drawTotalBetAmount": 3812
+    },
+    "createdAt": "2025-12-20T12:26:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad0a",
+    "id": 106,
+    "batch": {
+      "fightSequence": 106
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 35668,
+      "blueTotalBetAmount": 39257,
+      "drawTotalBetAmount": 9264
+    },
+    "createdAt": "2025-12-20T12:27:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad0b",
+    "id": 107,
+    "batch": {
+      "fightSequence": 107
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 13638,
+      "blueTotalBetAmount": 57646,
+      "drawTotalBetAmount": 5964
+    },
+    "createdAt": "2025-12-20T12:28:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad0c",
+    "id": 108,
+    "batch": {
+      "fightSequence": 108
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 26157,
+      "blueTotalBetAmount": 44856,
+      "drawTotalBetAmount": 6937
+    },
+    "createdAt": "2025-12-20T12:29:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad0d",
+    "id": 109,
+    "batch": {
+      "fightSequence": 109
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 11165,
+      "blueTotalBetAmount": 40673,
+      "drawTotalBetAmount": 7617
+    },
+    "createdAt": "2025-12-20T12:30:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad0e",
+    "id": 110,
+    "batch": {
+      "fightSequence": 110
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 48665,
+      "blueTotalBetAmount": 21893,
+      "drawTotalBetAmount": 3432
+    },
+    "createdAt": "2025-12-20T12:31:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad0f",
+    "id": 111,
+    "batch": {
+      "fightSequence": 111
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 38305,
+      "blueTotalBetAmount": 54426,
+      "drawTotalBetAmount": 9251
+    },
+    "createdAt": "2025-12-20T12:32:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad10",
+    "id": 112,
+    "batch": {
+      "fightSequence": 112
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 17507,
+      "blueTotalBetAmount": 55844,
+      "drawTotalBetAmount": 8699
+    },
+    "createdAt": "2025-12-20T12:33:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad11",
+    "id": 113,
+    "batch": {
+      "fightSequence": 113
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 16561,
+      "blueTotalBetAmount": 42510,
+      "drawTotalBetAmount": 10001
+    },
+    "createdAt": "2025-12-20T12:34:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad12",
+    "id": 114,
+    "batch": {
+      "fightSequence": 114
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 25288,
+      "blueTotalBetAmount": 20209,
+      "drawTotalBetAmount": 9454
+    },
+    "createdAt": "2025-12-20T12:35:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad13",
+    "id": 115,
+    "batch": {
+      "fightSequence": 115
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 59423,
+      "blueTotalBetAmount": 22111,
+      "drawTotalBetAmount": 8209
+    },
+    "createdAt": "2025-12-20T12:36:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad14",
+    "id": 116,
+    "batch": {
+      "fightSequence": 116
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 48325,
+      "blueTotalBetAmount": 32488,
+      "drawTotalBetAmount": 4036
+    },
+    "createdAt": "2025-12-20T12:37:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad15",
+    "id": 117,
+    "batch": {
+      "fightSequence": 117
+    },
+    "result1": "wala",
+    "details": {
+      "redTotalBetAmount": 41629,
+      "blueTotalBetAmount": 40347,
+      "drawTotalBetAmount": 1515
+    },
+    "createdAt": "2025-12-20T12:38:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad16",
+    "id": 118,
+    "batch": {
+      "fightSequence": 118
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 29316,
+      "blueTotalBetAmount": 53223,
+      "drawTotalBetAmount": 10713
+    },
+    "createdAt": "2025-12-20T12:39:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad17",
+    "id": 119,
+    "batch": {
+      "fightSequence": 119
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 24392,
+      "blueTotalBetAmount": 41757,
+      "drawTotalBetAmount": 9258
+    },
+    "createdAt": "2025-12-20T12:40:37.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69469982924934e8ca6fad18",
+    "id": 120,
+    "batch": {
+      "fightSequence": 120
+    },
+    "result1": "meron",
+    "details": {
+      "redTotalBetAmount": 37912,
+      "blueTotalBetAmount": 11174,
+      "drawTotalBetAmount": 9856
+    },
+    "createdAt": "2025-12-20T12:41:37.982Z",
+    "__v": 0
+  }
+]
