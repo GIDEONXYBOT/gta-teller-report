@@ -1,4 +1,4 @@
-name: Deploy Frontend to Cloudflare Pages
+﻿name: Deploy Frontend to Cloudflare Pages
 
 on:
   push:
@@ -17,14 +17,16 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install frontend deps
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install frontend dependencies
         working-directory: ./frontend
         run: npm ci
 
       - name: Build frontend
         working-directory: ./frontend
         env:
-          # Provide the public backend URL to the build (must be added to GitHub Secrets)
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
@@ -33,5 +35,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: 'gta-teller-report' # Your existing Cloudflare Pages project
-          directory: './frontend/dist'
+          projectName: gta-teller-report
+          directory: ./frontend/dist
