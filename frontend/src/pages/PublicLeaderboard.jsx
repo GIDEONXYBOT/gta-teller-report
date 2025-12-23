@@ -219,7 +219,7 @@ const PublicLeaderboard = () => {
       {/* Footer */}
       <div className="bg-gray-800 border-t border-gray-700 mt-12">
         <div className="max-w-6xl mx-auto px-6 py-6 text-center text-gray-400 text-sm">
-          <p>RMI Teller Report System - Today's Chicken Fight Results</p>
+          <p>GTA Teller Report System - Today's Chicken Fight Results</p>
           <p className="mt-1">Data updates automatically every minute</p>
         </div>
       </div>

@@ -105,7 +105,7 @@ export default function LoginPage() {
           {/* Title */}
           <FadeInUp>
             <h1 className="text-xl sm:text-2xl font-bold mb-6 text-center text-indigo-600 dark:text-indigo-400">
-              RMI Teller Report System
+              GTA Teller Report System
             </h1>
           </FadeInUp>
 
