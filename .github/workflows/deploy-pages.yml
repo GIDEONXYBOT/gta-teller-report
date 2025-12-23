@@ -33,5 +33,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: 'gideon-reports' # Your existing Cloudflare Pages project
+          projectName: 'gta-teller-report' # Your existing Cloudflare Pages project
           directory: './frontend/dist'
