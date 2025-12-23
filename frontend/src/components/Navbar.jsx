@@ -3,18 +3,18 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem("rmi_user") || "null");
+  const user = JSON.parse(localStorage.getItem("gta_user") || "null");
 
   const logout = () => {
-    localStorage.removeItem("rmi_token");
-    localStorage.removeItem("rmi_user");
+    localStorage.removeItem("gta_token");
+    localStorage.removeItem("gta_user");
     navigate("/login");
   };
 
   return (
     <nav className="bg-white shadow px-4 py-3">
       <div className="max-w-5xl mx-auto flex items-center justify-between">
-        <div className="font-bold text-lg">RMI Teller Report</div>
+        <div className="font-bold text-lg">GTA Teller Report</div>
         <div className="flex items-center gap-4">
           {user ? (
             <>

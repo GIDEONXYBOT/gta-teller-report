@@ -39,7 +39,7 @@ export default function AdminHistory() {
 
   const handlePrint = useReactToPrint({
     content: () => printRef.current,
-    documentTitle: "RMI_Gideon_Daily_Archive",
+    documentTitle: "GTA_Gideon_Daily_Archive",
   });
 
   useEffect(() => {

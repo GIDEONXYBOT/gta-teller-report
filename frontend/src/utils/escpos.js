@@ -13,7 +13,7 @@ function textToBytes(str = "") {
 }
 
 export function buildTellerReceipt58({
-  orgName = "RMI Teller Report",
+  orgName = "GTA Teller Report",
   tellerName = "",
   dateStr = new Date().toLocaleString(),
   systemBalance = 0,

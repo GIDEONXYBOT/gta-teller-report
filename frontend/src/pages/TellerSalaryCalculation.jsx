@@ -226,7 +226,7 @@ export default function TellerSalaryCalculation() {
     // Calculate base salary considering excluded days
     let totalBaseSalary = 0;
     const reportLines = [
-      `RMI TELLER REPORT`,
+      `GTA TELLER REPORT`,
       `==================`,
       `Teller: ${teller.name}`,
       `ID: ${teller.id}`,

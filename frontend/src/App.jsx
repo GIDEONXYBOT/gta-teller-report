@@ -25,7 +25,7 @@ export default function App() {
 
     appSocket.on("connect", () => {
       console.log("⚡ Connected to server:", appSocket.id);
-      showToast({ type: "info", message: "Connected to RMI Server" });
+      showToast({ type: "info", message: "Connected to GTA Server" });
     });
 
     appSocket.on("toast", (toast) => {
@@ -72,7 +72,7 @@ export default function App() {
 
       {/* Your routes are already inside main.jsx */}
       <div className="flex items-center justify-center h-full text-center text-gray-500 p-8">
-        RMI Teller Report System Active
+        GTA Teller Report System Active
       </div>
     </div>
   );
