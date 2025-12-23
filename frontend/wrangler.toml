@@ -1,4 +1,6 @@
+﻿[env.production]
 name = "gta-teller-report"
-pages_build_output_dir = "dist"
-
-
+type = "javascript"
+pages_build_output_dir = "frontend/dist"
+pages_build_command = "cd frontend && npm ci && npm run build"
+compatibility_date = "2024-12-15"
